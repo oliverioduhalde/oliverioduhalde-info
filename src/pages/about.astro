@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === "es";
+---
+
+<BaseLayout
+  title={isEs ? "Sobre mí — Oliverio Duhalde" : "About — Oliverio Duhalde"}
+  description={isEs
+    ? "Artista, compositor e investigador académico. Arte en la intersección de ciencia, tecnología y sistemas vivos."
+    : "Artist, composer and academic researcher. Art at the intersection of science, technology and living systems."}
+>
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+      <!-- Photo placeholder -->
+      <div class="lg:col-span-2">
+        <div class="w-full aspect-[3/4] bg-surface-dark light:bg-surface-light border border-border-dark light:border-border-light flex items-end p-6">
+          <p class="font-mono text-xs tracking-[0.20em] uppercase text-text-faint-dark light:text-text-faint-light">
+            Photo — pending
+          </p>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="lg:col-span-3">
+        <p class="font-mono text-xs tracking-[0.30em] uppercase text-accent mb-4">
+          {isEs ? "Sobre mí" : "About"}
+        </p>
+        <h1 class="text-4xl md:text-5xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light mb-8 leading-tight">
+          Oliverio Duhalde
+        </h1>
+
+        <div class="space-y-5 text-text-secondary-dark light:text-text-secondary-light leading-relaxed">
+          {isEs ? (
+            <>
+              <p>Artista, compositor e investigador académico. Su práctica se articula en la intersección de ciencia, tecnología y sistemas vivos: sonido, imagen, bio-art, inteligencia artificial, robótica, escultura y performance.</p>
+              <p>Doctor en Composición (UCA, 2025). Director de la carrera de Música para Cine en la Universidad Católica Argentina (Buenos Aires). Director de <a href="https://segnosound.com" target="_blank" rel="noopener" class="text-accent hover:underline">Segno</a>, productora con más de 300 proyectos para Disney+, HBO Max, Netflix, National Geographic, FOX, Star+ y Canal Encuentro.</p>
+              <p>Ha producido 11 álbumes y recibido más de 25 premios, becas, residencias y selecciones internacionales, entre ellos la Beca Fundación Antorchas, el Mecenazgo GCBA y el Premio ArCiTeC.</p>
+              <p>Su investigación combina la práctica artística con la docencia universitaria de más de 15 años, a través del MicRA Lab (Microscopía, Robótica y Arte), el workshop Banda de Robots y el Micropraxiscopio.</p>
+            </>
+          ) : (
+            <>
+              <p>Artist, composer and academic researcher. His practice sits at the intersection of science, technology and living systems: sound, image, bio-art, artificial intelligence, robotics, sculpture and performance.</p>
+              <p>PhD in Composition (UCA, 2025). Director of the Film Music program at Universidad Católica Argentina (Buenos Aires). Director of <a href="https://segnosound.com" target="_blank" rel="noopener" class="text-accent hover:underline">Segno</a>, a production company with 300+ projects for Disney+, HBO Max, Netflix, National Geographic, FOX, Star+ and Canal Encuentro.</p>
+              <p>He has produced 11 albums and received 25+ awards, grants, residencies and international selections, including Beca Fundación Antorchas, Mecenazgo GCBA and the ArCiTeC Award.</p>
+              <p>His research combines artistic practice with 15+ years of university teaching, through MicRA Lab (Microscopy, Robotics and Art), the Banda de Robots workshop and the Micropraxiscopio.</p>
+            </>
+          )}
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-10 flex flex-wrap gap-2">
+          {["Sound art", "Bio-art", "AI", "Robotics", "Sculpture", "Opera", "Performance", "Composition"].map(tag => (
+            <span class="font-mono text-[10px] tracking-[0.20em] uppercase px-3 py-1.5 border border-border-dark light:border-border-light text-text-faint-dark light:text-text-faint-light">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

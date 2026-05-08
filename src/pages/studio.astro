@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === "es";
+
+const clients = [
+  "Disney+", "HBO Max", "Netflix", "National Geographic",
+  "FOX", "Star+", "Canal Encuentro"
+];
+---
+
+<BaseLayout
+  title="Studio — Oliverio Duhalde"
+  description={isEs
+    ? "Sound design y composición para cine, televisión y medios digitales."
+    : "Sound design and composition for film, television and digital media."}
+>
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <div class="max-w-2xl">
+      <p class="font-mono text-xs tracking-[0.30em] uppercase text-accent mb-4">Studio</p>
+      <h1 class="text-4xl md:text-5xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light mb-8 leading-tight">
+        {isEs ? "Sound design &amp; composición" : "Sound design &amp; composition"}
+      </h1>
+      <p class="text-lg text-text-secondary-dark light:text-text-secondary-light leading-relaxed mb-6">
+        {isEs
+          ? "Oliverio dirige Segno, productora especializada en sound design, composición y post-producción de audio para cine, televisión y medios digitales."
+          : "Oliverio leads Segno, a production company specializing in sound design, composition and audio post-production for film, television and digital media."}
+      </p>
+      <p class="text-base text-text-muted-dark light:text-text-muted-light leading-relaxed mb-12">
+        {isEs
+          ? "300+ proyectos realizados para las principales plataformas y canales de la región."
+          : "300+ projects for the region's leading platforms and broadcasters."}
+      </p>
+
+      <!-- Client logos as text -->
+      <div class="mb-12">
+        <p class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light mb-6">
+          {isEs ? "Clientes" : "Clients"}
+        </p>
+        <div class="flex flex-wrap gap-3">
+          {clients.map(c => (
+            <span class="font-mono text-xs tracking-[0.15em] px-4 py-2.5 border border-border-dark light:border-border-light text-text-muted-dark light:text-text-muted-light">
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <a
+        href="https://segnosound.com"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-3 font-mono text-xs tracking-[0.20em] uppercase text-accent border border-accent px-6 py-3 hover:bg-accent hover:text-bg-dark transition-colors"
+      >
+        {isEs ? "Visitar Segno" : "Visit Segno"} →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

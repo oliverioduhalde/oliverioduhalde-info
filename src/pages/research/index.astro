@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === "es";
+
+const sections = [
+  {
+    slug: "teaching",
+    label: { en: "Teaching", es: "Docencia" },
+    desc: {
+      en: "15+ years of university teaching in composition, music technology and interdisciplinary practice.",
+      es: "Más de 15 años de docencia universitaria en composición, tecnología musical y práctica interdisciplinar.",
+    },
+  },
+  {
+    slug: "phd",
+    label: { en: "PhD Research", es: "Investigación doctoral" },
+    desc: {
+      en: "Doctoral research in Composition — UCA Buenos Aires (defended 2025).",
+      es: "Investigación doctoral en Composición — UCA Buenos Aires (defendida 2025).",
+    },
+  },
+  {
+    slug: "micra-lab",
+    label: { en: "MicRA Lab", es: "MicRA Lab" },
+    desc: {
+      en: "Collaborative artistic research laboratory: Microscopy, Robotics and Art.",
+      es: "Laboratorio de investigación artística colaborativa: Microscopía, Robótica y Arte.",
+    },
+  },
+  {
+    slug: "workshops/banda-de-robots",
+    label: { en: "Banda de Robots", es: "Banda de Robots" },
+    desc: {
+      en: "Transdisciplinary workshop: building and performing with robot musicians.",
+      es: "Workshop transdisciplinar: construcción y performance con músicos robóticos.",
+    },
+  },
+  {
+    slug: "workshops/micropraxiscopio",
+    label: { en: "Micropraxiscopio", es: "Micropraxiscopio" },
+    desc: {
+      en: "Collective microscopic workshop — exploring the invisible through shared observation.",
+      es: "Workshop microscópico colectivo — explorar lo invisible a través de la observación compartida.",
+    },
+  },
+  {
+    slug: "consulting",
+    label: { en: "Acoustic Consulting", es: "Consultoría acústica" },
+    desc: {
+      en: "Acoustic design for spaces: Templo Sonoro Punta del Este, UCA studios, and others.",
+      es: "Diseño acústico de espacios: Templo Sonoro Punta del Este, estudios UCA, y otros.",
+    },
+  },
+];
+---
+
+<BaseLayout
+  title={isEs ? "Investigación — Oliverio Duhalde" : "Research — Oliverio Duhalde"}
+>
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <p class="font-mono text-xs tracking-[0.30em] uppercase text-accent mb-4">
+      {isEs ? "Investigación" : "Research"}
+    </p>
+    <h1 class="text-4xl md:text-5xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light mb-16 leading-tight">
+      {isEs ? "Docencia &amp; investigación" : "Teaching &amp; research"}
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-dark light:bg-border-light">
+      {sections.map(s => {
+        const href = lang === "es"
+          ? `/es/research/${s.slug}`
+          : `/research/${s.slug}`;
+        return (
+          <a
+            href={href}
+            class="group block bg-bg-dark light:bg-bg-light p-8 hover:bg-surface-dark light:hover:bg-surface-light transition-colors"
+          >
+            <h2 class="text-xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light group-hover:text-accent transition-colors mb-3">
+              {s.label[lang]}
+            </h2>
+            <p class="text-sm text-text-muted-dark light:text-text-muted-light leading-relaxed">
+              {s.desc[lang]}
+            </p>
+            <span class="mt-6 inline-block font-mono text-[10px] tracking-[0.20em] uppercase text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+              {isEs ? "Ver más" : "Read more"} →
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
