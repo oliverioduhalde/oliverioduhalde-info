@@ -22,7 +22,11 @@ press:
     outlet: "The Guardian"
     url: ""
     year: 2024
-videos: []
+videos:
+  - vimeoId: "1190627526"
+    label:
+      en: "Astro.Log.IO — documentation"
+      es: "Astro.Log.IO — documentación"
 images: []
 related: ["totem"]
 ---
