@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WorkCard from "../../components/WorkCard.astro";
+import { getCollection } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const allWorks = await getCollection("works");
+const sorted = allWorks.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+
+const categories = ["cosmos", "bio-art", "sculpture", "opera", "performance", "immersive"];
+
+const catLabel: Record<string, string> = {
+  cosmos: t("works.filter.cosmos"),
+  "bio-art": t("works.filter.bioart"),
+  sculpture: t("works.filter.sculpture"),
+  opera: t("works.filter.opera"),
+  performance: t("works.filter.performance"),
+  immersive: t("works.filter.immersive"),
+};
+---
+
+<BaseLayout title="Works — Oliverio Duhalde">
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+
+    <!-- Header -->
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <p class="font-mono text-xs tracking-[0.30em] uppercase text-accent mb-3">Portfolio</p>
+        <h1 class="text-4xl md:text-5xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light">
+          {t("nav.works")}
+        </h1>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="flex flex-wrap gap-2" id="filter-bar">
+        <button
+          data-filter="all"
+          class="filter-btn active font-mono text-[10px] tracking-[0.20em] uppercase px-4 py-2 border border-accent text-accent"
+        >
+          {t("works.filter.all")}
+        </button>
+        {categories.map(cat => (
+          <button
+            data-filter={cat}
+            class="filter-btn font-mono text-[10px] tracking-[0.20em] uppercase px-4 py-2 border border-border-dark light:border-border-light text-text-muted-dark light:text-text-muted-light hover:border-accent hover:text-accent transition-colors"
+          >
+            {catLabel[cat]}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-dark light:bg-border-light" id="works-grid">
+      {sorted.map(work => (
+        <div data-category={work.data.category} class="work-item">
+          <WorkCard
+            slug={work.data.slug}
+            title={work.data.title[lang]}
+            category={work.data.category}
+            year={work.data.yearRange ? `${work.data.yearRange[0]}–${work.data.yearRange[1]}` : String(work.data.year)}
+            description={work.data.description[lang]}
+            lang={lang}
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const items = document.querySelectorAll<HTMLElement>(".work-item");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter ?? "all";
+
+      // Toggle active state
+      filterBtns.forEach(b => b.classList.remove("active", "border-accent", "text-accent"));
+      filterBtns.forEach(b => {
+        b.classList.add("border-border-dark", "text-text-muted-dark");
+      });
+      btn.classList.add("active", "border-accent", "text-accent");
+      btn.classList.remove("border-border-dark", "text-text-muted-dark");
+
+      // Show/hide items
+      items.forEach(item => {
+        if (filter === "all" || item.dataset.category === filter) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .filter-btn.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+</style>

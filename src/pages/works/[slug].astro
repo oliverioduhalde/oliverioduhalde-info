@@ -1,0 +1,214 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import VimeoEmbed from "../../components/VimeoEmbed.astro";
+import WorkCard from "../../components/WorkCard.astro";
+import { getCollection, render } from "astro:content";
+import { getLangFromUrl } from "../../i18n";
+
+export async function getStaticPaths() {
+  const works = await getCollection("works");
+  return works.map(work => ({
+    params: { slug: work.data.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const { Content } = await render(work);
+
+const catColors: Record<string, string> = {
+  cosmos: "var(--color-cat-cosmos)",
+  "bio-art": "var(--color-cat-bioart)",
+  sculpture: "var(--color-cat-sculpture)",
+  opera: "var(--color-cat-opera)",
+  performance: "var(--color-cat-performance)",
+  immersive: "var(--color-cat-immersive)",
+};
+const color = catColors[work.data.category] ?? "var(--color-accent)";
+
+const yearLabel = work.data.yearRange
+  ? `${work.data.yearRange[0]}–${work.data.yearRange[1]}`
+  : String(work.data.year);
+
+// Related works
+const allWorks = await getCollection("works");
+const relatedWorks = allWorks.filter(w => work.data.related.includes(w.data.slug));
+---
+
+<BaseLayout
+  title={`${work.data.title[lang]} — Oliverio Duhalde`}
+  description={work.data.description[lang]}
+>
+  <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+
+    <!-- Back -->
+    <div class="mb-10">
+      <a href={lang === "es" ? "/es/works" : "/works"} class="font-mono text-xs tracking-[0.20em] uppercase text-text-muted-dark light:text-text-muted-light hover:text-accent transition-colors">
+        ← {lang === "es" ? "Obras" : "Works"}
+      </a>
+    </div>
+
+    <!-- Hero header -->
+    <header class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-2 h-2 rounded-full" style={`background:${color}`}></span>
+        <span class="font-mono text-xs tracking-[0.25em] uppercase" style={`color:${color}`}>
+          {work.data.category}
+        </span>
+        <span class="font-mono text-xs text-text-faint-dark light:text-text-faint-light ml-2">
+          {yearLabel}
+        </span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light mb-6 leading-[1.05]">
+        {work.data.title[lang]}
+      </h1>
+
+      <p class="text-xl text-text-secondary-dark light:text-text-secondary-light leading-relaxed max-w-2xl">
+        {work.data.description[lang]}
+      </p>
+    </header>
+
+    <!-- Main content grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+
+      <!-- Left: body text + videos -->
+      <div class="lg:col-span-2 space-y-12">
+
+        <!-- Videos -->
+        {work.data.videos.length > 0 && (
+          <div class="space-y-8">
+            {work.data.videos.map(v => (
+              <VimeoEmbed
+                vimeoId={v.vimeoId}
+                label={v.label[lang]}
+                title={work.data.title[lang]}
+              />
+            ))}
+          </div>
+        )}
+
+        <!-- Body text -->
+        <div class="prose prose-invert light:prose max-w-none text-text-secondary-dark light:text-text-secondary-light leading-relaxed">
+          <Content />
+        </div>
+
+      </div>
+
+      <!-- Right: metadata sidebar -->
+      <aside class="space-y-8">
+
+        <!-- Technique -->
+        <div>
+          <h2 class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light mb-3">
+            {lang === "es" ? "Técnica" : "Technique"}
+          </h2>
+          <ul class="space-y-1">
+            {work.data.technique[lang].map(t => (
+              <li class="text-sm text-text-muted-dark light:text-text-muted-light">{t}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Exhibitions -->
+        {work.data.exhibitions.length > 0 && (
+          <div>
+            <h2 class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light mb-3">
+              {lang === "es" ? "Exhibiciones" : "Exhibitions"}
+            </h2>
+            <ul class="space-y-2">
+              {work.data.exhibitions.map(ex => (
+                <li class="text-sm text-text-muted-dark light:text-text-muted-light">
+                  <span class="text-text-secondary-dark light:text-text-secondary-light">{ex.venue}</span>
+                  {ex.city && <span class="text-text-faint-dark light:text-text-faint-light"> · {ex.city}</span>}
+                  <span class="font-mono text-[10px] ml-2 text-text-faint-dark light:text-text-faint-light">{ex.year}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Awards -->
+        {work.data.awards.length > 0 && (
+          <div>
+            <h2 class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light mb-3">
+              {lang === "es" ? "Premios" : "Awards"}
+            </h2>
+            <ul class="space-y-2">
+              {work.data.awards.map(aw => (
+                <li class="text-sm">
+                  <span class="text-text-secondary-dark light:text-text-secondary-light">{aw.name}</span>
+                  <span class="block font-mono text-[10px] text-text-faint-dark light:text-text-faint-light">{aw.body} · {aw.year}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Collaborators -->
+        {work.data.collaborators.length > 0 && (
+          <div>
+            <h2 class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light mb-3">
+              {lang === "es" ? "Colaboradores" : "Collaborators"}
+            </h2>
+            <ul class="space-y-2">
+              {work.data.collaborators.map(c => (
+                <li class="text-sm">
+                  <span class="text-text-secondary-dark light:text-text-secondary-light">{c.name}</span>
+                  <span class="block font-mono text-[10px] text-text-faint-dark light:text-text-faint-light">{c.role[lang]}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Press -->
+        {work.data.press.length > 0 && (
+          <div>
+            <h2 class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light mb-3">
+              Press
+            </h2>
+            <ul class="space-y-2">
+              {work.data.press.filter(p => p.url).map(p => (
+                <li>
+                  <a href={p.url} target="_blank" rel="noopener" class="text-sm text-accent hover:underline">
+                    {p.outlet} →
+                  </a>
+                  <span class="block font-mono text-[10px] text-text-faint-dark light:text-text-faint-light">{p.year}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+      </aside>
+    </div>
+
+    <!-- Related works -->
+    {relatedWorks.length > 0 && (
+      <section class="mt-24">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
+          <span class="font-mono text-xs tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light">
+            {lang === "es" ? "Obras relacionadas" : "Related works"}
+          </span>
+          <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-dark light:bg-border-light">
+          {relatedWorks.map(w => (
+            <WorkCard
+              slug={w.data.slug}
+              title={w.data.title[lang]}
+              category={w.data.category}
+              year={w.data.yearRange ? `${w.data.yearRange[0]}–${w.data.yearRange[1]}` : String(w.data.year)}
+              description={w.data.description[lang]}
+              lang={lang}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+  </article>
+</BaseLayout>

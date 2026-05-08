@@ -1,0 +1,56 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  category: string;
+  year: number | string;
+  description: string;
+  lang?: string;
+}
+
+const { slug, title, category, year, description, lang = "en" } = Astro.props;
+
+const catColors: Record<string, string> = {
+  cosmos: "var(--color-cat-cosmos)",
+  "bio-art": "var(--color-cat-bioart)",
+  sculpture: "var(--color-cat-sculpture)",
+  opera: "var(--color-cat-opera)",
+  performance: "var(--color-cat-performance)",
+  immersive: "var(--color-cat-immersive)",
+};
+
+const href = lang === "es" ? `/es/works/${slug}` : `/works/${slug}`;
+const color = catColors[category] ?? "var(--color-accent)";
+---
+
+<a
+  href={href}
+  class="group block bg-surface-dark light:bg-surface-light border border-border-dark light:border-border-light p-7 hover:border-accent transition-colors duration-300"
+>
+  <!-- Category bar -->
+  <div class="flex items-center gap-3 mb-6">
+    <span class="w-2 h-2 rounded-full shrink-0" style={`background:${color}`}></span>
+    <span class="font-mono text-[10px] tracking-[0.25em] uppercase" style={`color:${color}`}>
+      {category}
+    </span>
+    <span class="font-mono text-[10px] tracking-wider text-text-faint-dark light:text-text-faint-light ml-auto">
+      {year}
+    </span>
+  </div>
+
+  <!-- Title -->
+  <h3 class="text-xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light group-hover:text-accent transition-colors mb-3 leading-snug">
+    {title}
+  </h3>
+
+  <!-- Description -->
+  <p class="text-sm text-text-muted-dark light:text-text-muted-light leading-relaxed line-clamp-3">
+    {description}
+  </p>
+
+  <!-- Arrow -->
+  <div class="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="font-mono text-[10px] tracking-[0.20em] uppercase text-accent">View</span>
+    <span class="text-accent text-xs">→</span>
+  </div>
+</a>

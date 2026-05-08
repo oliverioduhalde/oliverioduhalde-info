@@ -1,47 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import WorkCard from "../components/WorkCard.astro";
+import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const allWorks = await getCollection("works");
+const sorted = allWorks.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
 ---
 
 <BaseLayout>
-  <section class="max-w-7xl mx-auto px-6 pt-24 pb-16">
-    <!-- Hero -->
-    <div class="max-w-2xl">
-      <h1 class="text-5xl md:text-7xl font-sans font-medium tracking-[-0.04em] text-text-primary-dark light:text-text-primary-light leading-[1.05] mb-6">
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-6 pt-28 pb-20">
+    <div class="max-w-3xl">
+      <h1 class="text-6xl md:text-8xl font-sans font-medium tracking-[-0.04em] text-text-primary-dark light:text-text-primary-light leading-[1.0] mb-8">
         Oliverio<br />Duhalde
       </h1>
-      <p class="font-mono text-sm tracking-[0.20em] uppercase text-accent mb-8">
+      <p class="font-mono text-sm tracking-[0.22em] uppercase text-accent mb-10">
         {t("hero.headline")}
       </p>
-      <p class="text-lg text-text-secondary-dark light:text-text-secondary-light leading-relaxed mb-3">
+      <p class="text-lg md:text-xl text-text-secondary-dark light:text-text-secondary-light leading-relaxed mb-4 max-w-xl">
         {t("hero.tagline")}
       </p>
       <p class="text-base text-text-muted-dark light:text-text-muted-light leading-relaxed italic">
         {t("hero.sub")}
       </p>
     </div>
+  </section>
 
-    <!-- Divider -->
-    <div class="mt-20 mb-16 flex items-center gap-4">
+  <!-- Works grid -->
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="flex items-center gap-4 mb-10">
       <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
-      <span class="font-mono text-xs tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light">
-        Works
-      </span>
+      <a href={lang === "es" ? "/es/works" : "/works"} class="font-mono text-xs tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light hover:text-accent transition-colors">
+        {t("nav.works")} →
+      </a>
       <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
     </div>
 
-    <!-- Works grid placeholder -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-dark light:bg-border-light">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div class="bg-bg-dark light:bg-bg-light p-8 min-h-64 flex flex-col justify-end">
-          <div class="h-2 w-8 rounded-full mb-4" style={`background:var(--color-accent)`}></div>
-          <p class="font-mono text-xs tracking-[0.20em] uppercase text-text-faint-dark light:text-text-faint-light">
-            Work {i + 1} — Coming soon
-          </p>
-        </div>
+      {sorted.map(work => (
+        <WorkCard
+          slug={work.data.slug}
+          title={work.data.title[lang]}
+          category={work.data.category}
+          year={work.data.yearRange ? `${work.data.yearRange[0]}–${work.data.yearRange[1]}` : String(work.data.year)}
+          description={work.data.description[lang]}
+          lang={lang}
+        />
       ))}
     </div>
   </section>
