@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border-dark light:border-border-light mt-32">
+  <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <img src="/logo.svg" alt="OD" width="20" height="20" class="opacity-60" />
+      <span class="font-mono text-xs tracking-[0.20em] text-text-faint-dark light:text-text-faint-light">
+        OLIVERIO DUHALDE
+      </span>
+    </div>
+    <p class="font-mono text-xs text-text-faint-dark light:text-text-faint-light tracking-wider">
+      © {year} — {t("footer.rights")}
+    </p>
+    <div class="flex gap-5">
+      <a href="https://vimeo.com/oliverioduhalde" target="_blank" rel="noopener" class="font-mono text-xs tracking-[0.15em] text-text-faint-dark light:text-text-faint-light hover:text-accent transition-colors uppercase">
+        Vimeo
+      </a>
+      <a href="https://segnosound.com" target="_blank" rel="noopener" class="font-mono text-xs tracking-[0.15em] text-text-faint-dark light:text-text-faint-light hover:text-accent transition-colors uppercase">
+        Segno
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout>
+  <section class="max-w-7xl mx-auto px-6 pt-24 pb-16">
+    <!-- Hero -->
+    <div class="max-w-2xl">
+      <h1 class="text-5xl md:text-7xl font-sans font-medium tracking-[-0.04em] text-text-primary-dark light:text-text-primary-light leading-[1.05] mb-6">
+        Oliverio<br />Duhalde
+      </h1>
+      <p class="font-mono text-sm tracking-[0.20em] uppercase text-accent mb-8">
+        {t("hero.headline")}
+      </p>
+      <p class="text-lg text-text-secondary-dark light:text-text-secondary-light leading-relaxed mb-3">
+        {t("hero.tagline")}
+      </p>
+      <p class="text-base text-text-muted-dark light:text-text-muted-light leading-relaxed italic">
+        {t("hero.sub")}
+      </p>
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-20 mb-16 flex items-center gap-4">
+      <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
+      <span class="font-mono text-xs tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light">
+        Works
+      </span>
+      <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
+    </div>
+
+    <!-- Works grid placeholder -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-dark light:bg-border-light">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div class="bg-bg-dark light:bg-bg-light p-8 min-h-64 flex flex-col justify-end">
+          <div class="h-2 w-8 rounded-full mb-4" style={`background:var(--color-accent)`}></div>
+          <p class="font-mono text-xs tracking-[0.20em] uppercase text-text-faint-dark light:text-text-faint-light">
+            Work {i + 1} — Coming soon
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

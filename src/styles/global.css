@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-bg-dark: #0a0c0a;
+  --color-bg-light: #f1ede2;
+  --color-surface-dark: #141714;
+  --color-surface-light: #e8e3d4;
+  --color-border-dark: #1f2520;
+  --color-border-light: #d4cfbe;
+
+  /* Text dark */
+  --color-text-primary-dark: #ffffff;
+  --color-text-secondary-dark: #c8c8c8;
+  --color-text-muted-dark: #8a8a8a;
+  --color-text-faint-dark: #6a6a6a;
+
+  /* Text light */
+  --color-text-primary-light: #15140f;
+  --color-text-secondary-light: #3d3a32;
+  --color-text-muted-light: #6a6660;
+  --color-text-faint-light: #8a8680;
+
+  /* Brand */
+  --color-accent: #5d8a6a;
+  --color-accent-light: #4a7058;
+
+  /* Categories */
+  --color-cat-cosmos: #d4632a;
+  --color-cat-bioart: #5d8a6a;
+  --color-cat-sculpture: #d4a52a;
+  --color-cat-opera: #8a7ac4;
+  --color-cat-performance: #c45a7a;
+  --color-cat-immersive: #2a8ab4;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", monospace;
+}
+
+/* Dark mode default */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary-dark);
+  font-family: var(--font-sans);
+}
+
+html.light {
+  color-scheme: light;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary-light);
+}
+
+/* Prevent flash of wrong theme */
+html:not(.light) {
+  background-color: #0a0c0a;
+}
