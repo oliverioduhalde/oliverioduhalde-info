@@ -28,7 +28,24 @@ videos:
     label:
       en: "Wallontu Mapu — excerpt II"
       es: "Wallontu Mapu — fragmento II"
-images: []
+images:
+  - src: "/images/works/wallontu-mapu/01.png"
+    alt:
+      en: "Wallontu Mapu — installation view"
+      es: "Wallontu Mapu — vista de instalación"
+    isHero: true
+  - src: "/images/works/wallontu-mapu/02.png"
+    alt:
+      en: "Wallontu Mapu — detail"
+      es: "Wallontu Mapu — detalle"
+  - src: "/images/works/wallontu-mapu/03.png"
+    alt:
+      en: "Wallontu Mapu — detail"
+      es: "Wallontu Mapu — detalle"
+  - src: "/images/works/wallontu-mapu/04.jpg"
+    alt:
+      en: "Wallontu Mapu — detail"
+      es: "Wallontu Mapu — detalle"
 related: []
 ---
 

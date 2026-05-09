@@ -24,7 +24,44 @@ videos:
     label:
       en: "MicRA Performance — documentation"
       es: "MicRA Performance — documentación"
-images: []
+images:
+  - src: "/images/works/micra-performance/01.jpg"
+    alt:
+      en: "MicRA Performance — installation view"
+      es: "MicRA Performance — vista de instalación"
+    isHero: true
+  - src: "/images/works/micra-performance/02.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/03.png"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/04.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/05.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/06.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/07.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/08.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
+  - src: "/images/works/micra-performance/09.jpg"
+    alt:
+      en: "MicRA Performance — detail"
+      es: "MicRA Performance — detalle"
 related: []
 isOngoing: true
 ---
