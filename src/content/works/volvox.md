@@ -30,7 +30,108 @@ videos:
     label:
       en: "Volvox — documentation"
       es: "Volvox — documentación"
-images: []
+images:
+  - src: "/images/works/volvox/01.jpg"
+    alt:
+      en: "Volvox — installation view"
+      es: "Volvox — vista de instalación"
+    isHero: true
+  - src: "/images/works/volvox/02.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/03.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/04.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/05.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/06.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/07.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/08.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/09.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/10.png"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/11.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/12.png"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/13.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/14.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/15.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/16.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/17.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/18.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/19.gif"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/20.png"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/21.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/22.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/23.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/24.jpg"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
+  - src: "/images/works/volvox/25.png"
+    alt:
+      en: "Volvox — detail"
+      es: "Volvox — detalle"
 related: ["omphalos", "biosonora"]
 ---
 

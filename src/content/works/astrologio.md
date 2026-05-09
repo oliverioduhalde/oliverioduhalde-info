@@ -27,7 +27,108 @@ videos:
     label:
       en: "Astro.Log.IO — documentation"
       es: "Astro.Log.IO — documentación"
-images: []
+images:
+  - src: "/images/works/astrologio/01.jpg"
+    alt:
+      en: "Astro.Log.IO — installation view"
+      es: "Astro.Log.IO — vista de instalación"
+    isHero: true
+  - src: "/images/works/astrologio/02.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/03.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/04.gif"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/05.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/06.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/07.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/08.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/09.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/10.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/11.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/12.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/13.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/14.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/15.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/16.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/17.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/18.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/19.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/20.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/21.jpg"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/22.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/23.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/24.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
+  - src: "/images/works/astrologio/25.png"
+    alt:
+      en: "Astro.Log.IO — detail"
+      es: "Astro.Log.IO — detalle"
 related: ["totem"]
 ---
 

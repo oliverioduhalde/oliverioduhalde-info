@@ -31,7 +31,32 @@ videos:
     label:
       en: "Totem — close-up"
       es: "Totem — close-up"
-images: []
+images:
+  - src: "/images/works/totem/01.png"
+    alt:
+      en: "Totem — Tokyo A"
+      es: "Totem — Tokio A"
+    isHero: true
+  - src: "/images/works/totem/02.jpg"
+    alt:
+      en: "Totem — London B"
+      es: "Totem — Londres B"
+  - src: "/images/works/totem/03.png"
+    alt:
+      en: "Totem — Buenos Aires A"
+      es: "Totem — Buenos Aires A"
+  - src: "/images/works/totem/04.jpg"
+    alt:
+      en: "Totem — London A"
+      es: "Totem — Londres A"
+  - src: "/images/works/totem/05.png"
+    alt:
+      en: "Totem — Buenos Aires B"
+      es: "Totem — Buenos Aires B"
+  - src: "/images/works/totem/06.png"
+    alt:
+      en: "Totem — Tokyo B"
+      es: "Totem — Tokio B"
 related: ["astrologio"]
 ---
 

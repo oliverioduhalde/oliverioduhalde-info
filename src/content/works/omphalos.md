@@ -40,7 +40,28 @@ videos:
     label:
       en: "Omphalos — documentation"
       es: "Omphalos — documentación"
-images: []
+images:
+  - src: "/images/works/omphalos/01.jpg"
+    alt:
+      en: "Omphalos — installation view"
+      es: "Omphalos — vista de instalación"
+    isHero: true
+  - src: "/images/works/omphalos/02.jpg"
+    alt:
+      en: "Omphalos — portrait"
+      es: "Omphalos — retrato"
+  - src: "/images/works/omphalos/03.jpg"
+    alt:
+      en: "Omphalos — UCA exhibition, 2021"
+      es: "Omphalos — exhibición UCA, 2021"
+  - src: "/images/works/omphalos/04.jpg"
+    alt:
+      en: "Omphalos — exhibition detail"
+      es: "Omphalos — detalle de exhibición"
+  - src: "/images/works/omphalos/05.jpg"
+    alt:
+      en: "Omphalos — altar"
+      es: "Omphalos — altar"
 related: ["biosonora", "volvox"]
 ---
 

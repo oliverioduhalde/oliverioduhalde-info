@@ -39,7 +39,104 @@ videos:
     label:
       en: "Klok — bell tuning with spectral analyzer"
       es: "Klok — afinación de campanas con analizador espectral"
-images: []
+images:
+  - src: "/images/works/klok/01.jpg"
+    alt:
+      en: "Klok — installation view"
+      es: "Klok — vista de instalación"
+    isHero: true
+  - src: "/images/works/klok/02.png"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/03.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/04.png"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/05.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/06.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/07.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/08.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/09.png"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/10.png"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/11.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/12.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/13.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/14.png"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/15.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/16.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/17.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/18.png"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/19.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/20.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/21.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/22.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/23.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
+  - src: "/images/works/klok/24.jpg"
+    alt:
+      en: "Klok — detail"
+      es: "Klok — detalle"
 related: ["dandelion", "propagacion"]
 ---
 

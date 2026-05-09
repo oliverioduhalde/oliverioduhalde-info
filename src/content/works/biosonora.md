@@ -16,7 +16,32 @@ exhibitions: []
 awards: []
 press: []
 videos: []
-images: []
+images:
+  - src: "/images/works/biosonora/01.jpg"
+    alt:
+      en: "Entering Biosonora's environment"
+      es: "Entrando al entorno de Biosonora"
+    isHero: true
+  - src: "/images/works/biosonora/02.jpg"
+    alt:
+      en: "Biosonora — axonometric view"
+      es: "Biosonora — vista axonométrica"
+  - src: "/images/works/biosonora/03.jpg"
+    alt:
+      en: "Visitor's perspective"
+      es: "Perspectiva del visitante"
+  - src: "/images/works/biosonora/04.jpg"
+    alt:
+      en: "Growing fern — detail"
+      es: "Helecho creciendo — detalle"
+  - src: "/images/works/biosonora/05.jpg"
+    alt:
+      en: "Breathing fern — detail"
+      es: "Helecho respirando — detalle"
+  - src: "/images/works/biosonora/06.jpg"
+    alt:
+      en: "Fern has been here for a long time"
+      es: "El helecho lleva aquí mucho tiempo"
 related: ["omphalos"]
 ---
 

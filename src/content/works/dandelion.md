@@ -24,7 +24,60 @@ videos:
     label:
       en: "Dandelion — detail"
       es: "Dandelion — detalle"
-images: []
+images:
+  - src: "/images/works/dandelion/01.jpg"
+    alt:
+      en: "Dandelion — installation view"
+      es: "Dandelion — vista de instalación"
+    isHero: true
+  - src: "/images/works/dandelion/02.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/03.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/04.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/05.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/06.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/07.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/08.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/09.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/10.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/11.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/12.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/13.jpg"
+    alt:
+      en: "Dandelion — detail"
+      es: "Dandelion — detalle"
 related: ["propagacion", "klok"]
 ---
 

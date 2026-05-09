@@ -16,7 +16,20 @@ exhibitions: []
 awards: []
 press: []
 videos: []
-images: []
+images:
+  - src: "/images/works/propagacion/01.png"
+    alt:
+      en: "Sound Cast 01"
+      es: "Sound Cast 01"
+    isHero: true
+  - src: "/images/works/propagacion/02.png"
+    alt:
+      en: "Sound Cast 02"
+      es: "Sound Cast 02"
+  - src: "/images/works/propagacion/03.png"
+    alt:
+      en: "Sound Cast 03"
+      es: "Sound Cast 03"
 related: ["klok", "dandelion"]
 ---
 
