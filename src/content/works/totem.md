@@ -18,7 +18,19 @@ exhibitions:
     city: "Buenos Aires"
 awards: []
 press: []
-videos: []
+videos:
+  - vimeoId: "1190646158"
+    label:
+      en: "Totem — documentation"
+      es: "Totem — documentación"
+  - vimeoId: "1190646272"
+    label:
+      en: "Totem — detail"
+      es: "Totem — detalle"
+  - vimeoId: "1190646384"
+    label:
+      en: "Totem — close-up"
+      es: "Totem — close-up"
 images: []
 related: ["astrologio"]
 ---
