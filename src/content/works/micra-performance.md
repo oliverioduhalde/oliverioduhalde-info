@@ -15,7 +15,15 @@ collaborators: []
 exhibitions: []
 awards: []
 press: []
-videos: []
+videos:
+  - vimeoId: "1190647178"
+    label:
+      en: "MicRA Performance — full concert"
+      es: "MicRA Performance — concierto completo"
+  - vimeoId: "1190646773"
+    label:
+      en: "MicRA Performance — documentation"
+      es: "MicRA Performance — documentación"
 images: []
 related: []
 isOngoing: true
