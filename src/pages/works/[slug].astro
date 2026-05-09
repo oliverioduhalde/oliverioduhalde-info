@@ -185,6 +185,22 @@ const relatedWorks = allWorks.filter(w => work.data.related.includes(w.data.slug
       </aside>
     </div>
 
+    <!-- Image gallery -->
+    {work.data.images.length > 0 && (
+      <section class="mt-20">
+        <div class="columns-2 md:columns-3 gap-1 space-y-1">
+          {work.data.images.map(img => (
+            <img
+              src={img.src}
+              alt={img.alt[lang]}
+              class="w-full break-inside-avoid block"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Related works -->
     {relatedWorks.length > 0 && (
       <section class="mt-24">
