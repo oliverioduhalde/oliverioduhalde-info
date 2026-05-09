@@ -78,6 +78,74 @@ images:
     alt:
       en: "Dandelion — detail"
       es: "Dandelion — detalle"
+  - src: "/images/works/dandelion/14.png"
+    alt:
+      en: "Dandelion — concept stage"
+      es: "Dandelion — etapa de concepto"
+  - src: "/images/works/dandelion/15.jpg"
+    alt:
+      en: "Dandelion — concept stage"
+      es: "Dandelion — etapa de concepto"
+  - src: "/images/works/dandelion/16.jpg"
+    alt:
+      en: "Dandelion — concept stage"
+      es: "Dandelion — etapa de concepto"
+  - src: "/images/works/dandelion/17.jpg"
+    alt:
+      en: "Dandelion — prototype"
+      es: "Dandelion — prototipo"
+  - src: "/images/works/dandelion/18.jpg"
+    alt:
+      en: "Dandelion — prototype"
+      es: "Dandelion — prototipo"
+  - src: "/images/works/dandelion/19.jpg"
+    alt:
+      en: "Dandelion — prototype"
+      es: "Dandelion — prototipo"
+  - src: "/images/works/dandelion/20.jpg"
+    alt:
+      en: "Dandelion — software"
+      es: "Dandelion — software"
+  - src: "/images/works/dandelion/21.png"
+    alt:
+      en: "Dandelion — software"
+      es: "Dandelion — software"
+  - src: "/images/works/dandelion/22.png"
+    alt:
+      en: "Dandelion — software"
+      es: "Dandelion — software"
+  - src: "/images/works/dandelion/23.jpg"
+    alt:
+      en: "Dandelion — sculpture development"
+      es: "Dandelion — desarrollo de escultura"
+  - src: "/images/works/dandelion/24.jpg"
+    alt:
+      en: "Dandelion — sculpture development"
+      es: "Dandelion — desarrollo de escultura"
+  - src: "/images/works/dandelion/25.jpg"
+    alt:
+      en: "Dandelion — sculpture development"
+      es: "Dandelion — desarrollo de escultura"
+  - src: "/images/works/dandelion/26.jpg"
+    alt:
+      en: "Dandelion — assembling"
+      es: "Dandelion — ensamblaje"
+  - src: "/images/works/dandelion/27.jpg"
+    alt:
+      en: "Dandelion — assembling"
+      es: "Dandelion — ensamblaje"
+  - src: "/images/works/dandelion/28.jpg"
+    alt:
+      en: "Dandelion — assembling"
+      es: "Dandelion — ensamblaje"
+  - src: "/images/works/dandelion/29.jpg"
+    alt:
+      en: "Dandelion — exhibition, Espacio Fundación Telefónica"
+      es: "Dandelion — exposición, Espacio Fundación Telefónica"
+  - src: "/images/works/dandelion/30.jpg"
+    alt:
+      en: "Dandelion — exhibition, Espacio Fundación Telefónica"
+      es: "Dandelion — exposición, Espacio Fundación Telefónica"
 related: ["propagacion", "klok"]
 ---
 
