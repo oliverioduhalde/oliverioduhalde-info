@@ -23,6 +23,22 @@ videos:
     label:
       en: "Klok — documentation"
       es: "Klok — documentación"
+  - vimeoId: "1190653943"
+    label:
+      en: "Klok — final installation (Sala Ginastera, UCA)"
+      es: "Klok — instalación final (Sala Ginastera, UCA)"
+  - vimeoId: "1190654043"
+    label:
+      en: "Klok — prototype (February 2018)"
+      es: "Klok — prototipo (febrero 2018)"
+  - vimeoId: "1190654082"
+    label:
+      en: "Klok — electromechanical system (July 2018)"
+      es: "Klok — sistema electromecánico (julio 2018)"
+  - vimeoId: "1190654126"
+    label:
+      en: "Klok — bell tuning with spectral analyzer"
+      es: "Klok — afinación de campanas con analizador espectral"
 images: []
 related: ["dandelion", "propagacion"]
 ---
