@@ -5,13 +5,36 @@ interface Props {
   title?: string;
 }
 const { vimeoId, label, title = "" } = Astro.props;
+
+let width = 16;
+let height = 9;
+try {
+  const res = await fetch(
+    `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${vimeoId}`
+  );
+  if (res.ok) {
+    const data = await res.json();
+    if (data.width && data.height) {
+      width = data.width;
+      height = data.height;
+    }
+  }
+} catch {
+  // fallback to 16:9
+}
+
+const isVertical = height > width;
+
+const containerStyle = isVertical
+  ? `aspect-ratio: ${width}/${height}; max-height: 75vh; width: auto; margin: 0 auto;`
+  : `aspect-ratio: ${width}/${height}; width: 100%;`;
 ---
 
 <figure class="w-full">
-  <div class="relative w-full" style="padding-top:56.25%">
+  <div style={containerStyle}>
     <iframe
       src={`https://player.vimeo.com/video/${vimeoId}?color=5d8a6a&title=0&byline=0&portrait=0`}
-      class="absolute inset-0 w-full h-full border-0"
+      class="w-full h-full border-0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
       loading="lazy"
