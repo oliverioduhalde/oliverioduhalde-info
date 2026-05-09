@@ -1,0 +1,134 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const isEs = lang === "es";
+
+const education = [
+  { year: "2025", item: isEs ? "Doctor en Composición — Universidad Católica Argentina (UCA). Técnicas compositivas aplicadas a la escultura sonora." : "PhD in Composition — Universidad Católica Argentina (UCA). Compositional techniques applied to sound sculpture." },
+  { year: "2012", item: isEs ? "Taller «Interactivos 2012» — Mariano Sardón y Rodrigo Alonso, Fundación Telefónica." : "Workshop «Interactivos 2012» — Mariano Sardón and Rodrigo Alonso, Fundación Telefónica." },
+  { year: "2011", item: isEs ? "Programa de Artistas — Universidad Torcuato Di Tella. Talleres con Diego Bianchi y Mónica Guiron." : "Artists' Program — Universidad Torcuato Di Tella. Workshops with Diego Bianchi and Mónica Guiron." },
+  { year: "2010", item: isEs ? "Seminario de posgrado «Composición asistida y procesamiento en tiempo real» — Dr. Pablo Cetta (UCA)." : "Postgraduate seminar «Computer-assisted composition and real-time processing» — Dr. Pablo Cetta (UCA)." },
+  { year: "2009", item: isEs ? "Seminario en Arte Sonoro — Manuel Rocha Iturbide (CCEBA). Electrónica aplicada al arte con Arduino — Diego Diez (CCEBA)." : "Sound Art seminar — Manuel Rocha Iturbide (CCEBA). Electronics applied to art with Arduino — Diego Diez (CCEBA)." },
+  { year: "1994", item: isEs ? "Licenciatura en Dirección Orquestal — Facultad de Artes y Ciencias Musicales, Universidad Católica Argentina (UCA)." : "BA in Orchestral Conducting — Facultad de Artes y Ciencias Musicales, Universidad Católica Argentina (UCA)." },
+];
+
+const teaching = [
+  { year: "2013–", item: isEs ? "Profesor titular — Producción Musical III y Acústica Aplicada, Carrera de Producción Musical, UCA." : "Full Professor — Music Production III and Applied Acoustics, Music Production Program, UCA." },
+  { year: "2013–", item: isEs ? "Director — Carrera de Música para Cine y Medios Audiovisuales, UCA." : "Director — Film and Audiovisual Music Program, UCA." },
+  { year: "2010–2012", item: isEs ? "Profesor titular — Producción Musical I, II y III, UCA." : "Full Professor — Music Production I, II and III, UCA." },
+  { year: "2010", item: isEs ? "Diseño y planificación de la Licenciatura en Diseño de Bandas Sonoras, UCA." : "Design and planning of the BA in Soundtrack Design, UCA." },
+  { year: "2008–", item: isEs ? "Profesor titular — Taller de Diseño Sonoro, MaCA (Maestría en Comunicación Audiovisual), UCA." : "Full Professor — Sound Design Workshop, MaCA (MA in Audiovisual Communication), UCA." },
+];
+
+const exhibitions = [
+  { year: "2024", item: "Totem — Centro Cultural San Martín, Buenos Aires." },
+  { year: "2021", item: "Omphalos — UCA, Buenos Aires." },
+  { year: "2019", item: "Omphalos — Centro Cultural Recoleta / Casa Nacional del Bicentenario, Buenos Aires." },
+  { year: "2018", item: "Klok — Sala Ginastera, UCA, Buenos Aires. (Mecenazgo GCBA)" },
+  { year: "2015", item: "Volvox — Centro Cultural Recoleta, Buenos Aires." },
+  { year: "2014", item: "Volvox — Centro Cultural San Martín, Buenos Aires. (Premio ArCiTeC)" },
+  { year: "2013", item: "Dandelion — Espacio Fundación Telefónica, Buenos Aires." },
+  { year: "2007", item: isEs ? "Biosonora — Espacio Fundación Telefónica / Centro Cultural Recoleta, Buenos Aires. (Premio Telefónica 2007)" : "Biosonora — Espacio Fundación Telefónica / Centro Cultural Recoleta, Buenos Aires. (Premio Telefónica 2007)" },
+  { year: "2005", item: isEs ? "Wallontu Mapu — Planetario Galileo Galilei, Buenos Aires." : "Wallontu Mapu — Planetario Galileo Galilei, Buenos Aires." },
+  { year: "2004", item: "Soundscape II — CC Rojas, Buenos Aires." },
+  { year: "2001", item: "Soundscapes — Sala Ginastera, UCA, Buenos Aires." },
+];
+
+const awards = [
+  { year: "2019", item: "Mecenazgo GCBA — Omphalos." },
+  { year: "2018", item: "Mecenazgo GCBA — Klok." },
+  { year: "2014", item: isEs ? "Premio ArCiTeC — Volvox." : "ArCiTeC Award — Volvox." },
+  { year: "2009", item: isEs ? "Prix Jeunesse International «Primer Premio» — Civilizaciones China." : "Prix Jeunesse International «First Prize» — Civilizaciones China." },
+  { year: "2007", item: isEs ? "Premio Telefónica — Estímulo a la creación artística — Biosonora." : "Premio Telefónica — Artistic Creation Grant — Biosonora." },
+  { year: "2006", item: isEs ? "Lápiz de Plata — Comercial «SI-NO»." : "Lápiz de Plata — Commercial «SI-NO»." },
+  { year: "2006", item: isEs ? "Nominación Premio Teatros del Mundo — Mejor Música (CC Rojas)." : "Nomination Premio Teatros del Mundo — Best Music (CC Rojas)." },
+  { year: "2004", item: isEs ? "Premio UNESCO — «Pas-par-tu»." : "UNESCO Award — «Pas-par-tu»." },
+  { year: "2004", item: isEs ? "Mejor Cortometraje Documental — Festival Divercine, Montevideo." : "Best Documentary Short — Divercine Festival, Montevideo." },
+  { year: "2003", item: isEs ? "Beca Fundación Antorchas — Subsidio a la Creación Artística — Wallontu Mapu." : "Fundación Antorchas Grant — Artistic Creation — Wallontu Mapu." },
+  { year: "2003", item: isEs ? "Prix Jeunesse International «Primer Premio»." : "Prix Jeunesse International «First Prize»." },
+];
+
+const recordings = [
+  { year: "2010", item: isEs ? "Música Barroca Sudamericana «Orejón y Aparicio» (obra inédita). Lima, Perú." : "South American Baroque Music «Orejón y Aparicio» (unpublished work). Lima, Peru." },
+  { year: "2009", item: "«El mosaico musical» — Compositores Argentinos del SXX (Antonio Formario)." },
+  { year: "2009", item: "Obras de Piano de Mendelssohn en sus viajes a Irlanda (Antonio Formaro)." },
+  { year: "2008", item: isEs ? "Música Argentina Litúrgica del siglo XX." : "Argentine Liturgical Music of the 20th Century." },
+  { year: "2008", item: "ALFILER." },
+  { year: "2005", item: "UNO — Carolina de la Muela." },
+  { year: "2002", item: "Canela cuenta cuentos." },
+  { year: "1999", item: isEs ? "Cuatro Elementos — Primer Premio SUTHER." : "Cuatro Elementos — First Prize SUTHER." },
+];
+
+const publications = [
+  { year: "2011", item: isEs ? "SATIR (Science, Art and Technology Interdisciplinary Research) — UCA / Iowa State University. Organización, disertación y moderación." : "SATIR (Science, Art and Technology Interdisciplinary Research) — UCA / Iowa State University. Organization, paper and moderation." },
+  { year: "2010", item: isEs ? "7ª Semana de la Música y la Musicología, UCA — Disertante y moderador." : "7th Week of Music and Musicology, UCA — Speaker and moderator." },
+  { year: "2007", item: isEs ? "«La producción musical y el diseño sonoro» — Expo Argentina Educativa (Clarín)." : "«Music production and sound design» — Expo Argentina Educativa (Clarín)." },
+  { year: "2006", item: isEs ? "«Presentación de Wallontu Mapu» — Semana de la Música y la Musicología, UCA." : "«Presentation of Wallontu Mapu» — Week of Music and Musicology, UCA." },
+];
+
+type Section = { year: string; item: string };
+---
+
+<BaseLayout
+  title={isEs ? "Bio — Oliverio Duhalde" : "Bio — Oliverio Duhalde"}
+  description={isEs
+    ? "Currículum vitae de Oliverio Duhalde — artista, compositor e investigador académico."
+    : "Curriculum vitae of Oliverio Duhalde — artist, composer and academic researcher."}
+>
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+
+    <header class="mb-16 max-w-3xl">
+      <p class="font-mono text-xs tracking-[0.30em] uppercase text-accent mb-4">Bio</p>
+      <h1 class="text-4xl md:text-5xl font-sans font-medium tracking-tight text-text-primary-dark light:text-text-primary-light mb-8 leading-tight">
+        Oliverio Duhalde
+      </h1>
+      <div class="space-y-4 text-text-secondary-dark light:text-text-secondary-light leading-relaxed">
+        {isEs ? (
+          <>
+            <p>Oliverio H. Duhalde nace en Buenos Aires en 1974. Se licencia en Dirección Orquestal en la UCA y realiza estudios de posgrado en producción e ingeniería de sonido. Doctor en Composición (UCA, 2025) con tesis sobre técnicas compositivas aplicadas a la escultura sonora.</p>
+            <p>Profesor titular y Director de la Carrera de Música para Cine y Medios Audiovisuales en la Facultad de Artes y Ciencias Musicales (UCA). Junto a Martín Bonadeo, miembro fundador del TECAT (Taller Experimental de Ciencia, Arte y Tecnología).</p>
+            <p>En 2001 funda <a href="https://segnosound.com" target="_blank" rel="noopener" class="text-accent hover:underline">Segno</a>, productora de diseño sonoro y composición con más de 300 proyectos para Disney+, HBO Max, Netflix, National Geographic, FOX, Star+ y Canal Encuentro.</p>
+          </>
+        ) : (
+          <>
+            <p>Oliverio H. Duhalde was born in Buenos Aires in 1974. He holds a BA in Orchestral Conducting from UCA and postgraduate studies in sound production and engineering. PhD in Composition (UCA, 2025), with a thesis on compositional techniques applied to sound sculpture.</p>
+            <p>Full Professor and Director of the Film and Audiovisual Music Program at the Facultad de Artes y Ciencias Musicales (UCA). Co-founder, with Martín Bonadeo, of TECAT (Experimental Workshop on Science, Art and Technology).</p>
+            <p>In 2001 he founded <a href="https://segnosound.com" target="_blank" rel="noopener" class="text-accent hover:underline">Segno</a>, a sound design and composition studio with 300+ projects for Disney+, HBO Max, Netflix, National Geographic, FOX, Star+ and Canal Encuentro.</p>
+          </>
+        )}
+      </div>
+    </header>
+
+    <div class="space-y-16">
+
+      {([
+        { titleEn: "Education", titleEs: "Formación", items: education },
+        { titleEn: "Academic teaching", titleEs: "Actividad académica", items: teaching },
+        { titleEn: "Exhibitions & performances", titleEs: "Muestras y conciertos", items: exhibitions },
+        { titleEn: "Awards & grants", titleEs: "Premios y becas", items: awards },
+        { titleEn: "Recordings & productions", titleEs: "Grabaciones y producciones", items: recordings },
+        { titleEn: "Publications & symposia", titleEs: "Ponencias y publicaciones", items: publications },
+      ] as { titleEn: string; titleEs: string; items: Section[] }[]).map(({ titleEn, titleEs, items }) => (
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <h2 class="font-mono text-[10px] tracking-[0.30em] uppercase text-text-faint-dark light:text-text-faint-light whitespace-nowrap">
+              {isEs ? titleEs : titleEn}
+            </h2>
+            <div class="h-px flex-1 bg-border-dark light:bg-border-light"></div>
+          </div>
+          <ul class="space-y-3">
+            {items.map(({ year, item }) => (
+              <li class="grid grid-cols-[4rem_1fr] gap-4">
+                <span class="font-mono text-xs text-text-faint-dark light:text-text-faint-light pt-0.5">{year}</span>
+                <span class="text-sm text-text-secondary-dark light:text-text-secondary-light leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+    </div>
+  </section>
+</BaseLayout>
